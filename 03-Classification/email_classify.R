@@ -45,7 +45,8 @@ ex1 <- ggplot(val, aes(x, V2)) +
   geom_jitter(aes(shape = as.factor(V3)),
                   position = position_jitter(height = 2)) +
   scale_shape_discrete(guide = "none", solid = FALSE) +
-  geom_hline(aes(yintercept = c(10,30)), linetype = 2) +
+  geom_hline(aes(yintercept = 10), linetype = 2) +
+  geom_hline(aes(yintercept = 30), linetype = 2) +
   theme_bw() +
   xlab("X") +
   ylab("Y")
@@ -53,6 +54,7 @@ ggsave(plot = ex1,
        filename = file.path("images", "00_Ex1.pdf"),
        height = 10,
        width = 10)
+##  geom_hline(aes(yintercept = c(10,30)), linetype = 2) +
 
 # Return a single element vector of just the email body
 # This is a very simple approach, as we are only using 
